@@ -87,7 +87,7 @@ router.post('/login',
 		successRedirect: '/',
 		failureRedirect: '/users/login',
 		failureFlash: true,
-		successFlash:`You are login`
+		successFlash:`You are login. You can add a new article.`
 	})
 )
 
