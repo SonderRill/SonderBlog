@@ -7,10 +7,10 @@ block content
 	form(method='POST',action = '/articles/edit/'+article._id)
 		#form-group
 			label Title:
-			input.form-control(name='title',type = 'text', value=article.title)
+			input.form-control(name='title',type = 'text', value=article.title novalidate autocomplete='off')
 		#form-group
 			label Author:
-			input.form-control(name='author',type = 'text', value=article.author)
+			input.form-control(name='author',type = 'text', value=article.author novalidate autocomplete='off')
 		#form-group
 			label Body:
 			textarea.form-control(name='body')=article.body
