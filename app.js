@@ -69,7 +69,6 @@ app.get("/", (req, res) => {
         if (err) {
             console.log(err)
         }
-        console.log(articles)
 
         res.render("index", {
             title: 'Articles',

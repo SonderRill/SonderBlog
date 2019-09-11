@@ -8,4 +8,11 @@
 	color: #5B5C59
 }
 
+/*.list-group li a :first-child {
+	color:#B34EE9 
+}*/
 
+.mainArticle a {
+	color: #343A40;
+	font-weight: 500
+}

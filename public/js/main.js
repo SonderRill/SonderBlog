@@ -15,4 +15,6 @@ $(document).ready(function () {
 			}
 		})
 	})
+
+	$('.list-group li:first').addClass('mainArticle')
 })
