@@ -69,6 +69,7 @@ app.get("/", (req, res) => {
         if (err) {
             console.log(err)
         }
+        console.log(articles)
 
         res.render("index", {
             title: 'Articles',
@@ -88,4 +89,8 @@ app.use('/users', users)
 
 
 app.listen(PORT, () => console.log('Server Running'))
+
+
+
+
 
