@@ -50,15 +50,21 @@ router.post('/add',[
 router.get('/edit/:id', ensureAuthenticated, (req, res) => {
 
     Article.findById(req.params.id, (err, article) => {
-        if(article.unique != req.user._id) {
+        
+
+       if(req.user._id != '5d78ae77c500aa059cf3616f' && article.unique != req.user._id) {
             req.flash('danger', 'Not Authorized')
             return res.redirect('/')
 
+
         }
-        res.render('edit_article', {
-            title:'Edit Article',
-            article: article
-        })
+        else {
+            return res.render('edit_article', {
+                title:'Edit Article',
+                article: article
+            }) 
+        }
+        
 
     })
 })
@@ -110,11 +116,11 @@ router.delete('/:id', (req, res) => {
 	let query = {_id:req.params.id}
 
     Article.findById(req.params.id, (err, article) => {
-        if(article.unique != req.user._id){
-            res.status(500).send()
+        if(req.user._id != '5d78ae77c500aa059cf3616f' && article.unique != req.user._id){
+            return res.status(500).send()
         }
         else {
-            Article.remove(query, (err) => {
+            Article.deleteOneg(query, (err) => {
             console.log(err)
             })
 
