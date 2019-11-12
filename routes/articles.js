@@ -120,7 +120,7 @@ router.delete('/:id', (req, res) => {
             return res.status(500).send()
         }
         else {
-            Article.deleteOneg(query, (err) => {
+            Article.deleteOne(query, (err) => {
             console.log(err)
             })
 
